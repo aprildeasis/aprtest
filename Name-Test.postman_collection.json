@@ -1,0 +1,244 @@
+{
+	"info": {
+		"_postman_id": "8c8649e3-80c3-475d-9166-2b012cc524a7",
+		"name": "Name-Test",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Non-proxy-redirect-flow (Login)",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "ecquaria-authToken",
+						"value": "eyJhbGciOiJSUzI1NiIsImtpZCI6IjJBaldpOXJISTcvUDlMQUJFdU01SjYzRURBMXBEMEdESE0yNXd2OHRRTTBVTzZrcDE2Y2pVdkQwb21XTDhQOXQiLCJlbnRpdHlJZCI6IlRtcXJuRC1hZWdMcHN5RXUxVDJHYUEifQ.eyJpc3MiOiJFSVM6SldTIiwianRpIjoiVG1xcm5ELWFlZ0xwc3lFdTFUMkdhQSIsImlhdCI6MTY0MDY2MTIzOCwiZXhwIjoxNjQzMjUzMjM4LCJzdWIiOiJFQ1E6RUlDOlRPS0VOOkpXVCIsImNsYWltcyI6eyJ0ZW5hbnRJZCI6Ik1BUy1ERU1PLVNQLVRlc3Qtbm9ucHJveHkiLCJpZHAiOiJPSURDIiwiZ2F0ZXdheSI6InNwIiwicHJvZmlsZSI6Ik1BUy1ERU1PLU9JREMtUlAtTU9DSyJ9fQ.cEnRSSOHmqOmOaWHQJcmKeWqptTje1c_KFk22UFQg3Ahb1XdrzpqgxCJWOgP11wK2A3zJ2xJ2K-ld_oV-0O1tCdTLEzhxka5PbVu5RAuMk4KHXr3Olew1SaoCtGURYcgfo7TbLO3d24zQhSWeU_46C60jZilCV_zkY27qTCykNvCzhLowilmiiMtTP7fmWNCbf1zf8cK0EbY46_Ly1DeVQ20Gcy6KG5_TwQBTU2YzpHwfFgp-YCcHKWND2xx23sDOv5ZpXHDz3AvccODyWkMias9rslrLlmagIyZbpzZjvZihdwMR4dyFaeNkgje24McdGkBFuAb4-jNtsRAqTr4Zg",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://mockserver.toppanecquaria.com/singpass/authorize?response_type=code&scope=openid&client_id=Test-Service3&nonce=f6837840-e5b2-4a62-a01b-A000001&state=3880d59b-f5de-4803-b667-A000001&redirect_uri=https://httpbin.org/anything",
+					"protocol": "https",
+					"host": [
+						"mockserver",
+						"toppanecquaria",
+						"com"
+					],
+					"path": [
+						"singpass",
+						"authorize"
+					],
+					"query": [
+						{
+							"key": "response_type",
+							"value": "code"
+						},
+						{
+							"key": "scope",
+							"value": "openid"
+						},
+						{
+							"key": "client_id",
+							"value": "Test-Service3"
+						},
+						{
+							"key": "nonce",
+							"value": "f6837840-e5b2-4a62-a01b-A000001"
+						},
+						{
+							"key": "state",
+							"value": "3880d59b-f5de-4803-b667-A000001"
+						},
+						{
+							"key": "redirect_uri",
+							"value": "https://httpbin.org/anything"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "SP: Non-proxy-flow (Claim)",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "ecquaria-correlationId",
+						"value": "{{$guid}}",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "ecquaria-authToken",
+						"value": "eyJhbGciOiJSUzI1NiIsImtpZCI6IjJBaldpOXJISTcvUDlMQUJFdU01SjYzRURBMXBEMEdESE0yNXd2OHRRTTBVTzZrcDE2Y2pVdkQwb21XTDhQOXQiLCJlbnRpdHlJZCI6Il9pZTlVbXBwSzZxanFmN3pOLUxINFEifQ.eyJpc3MiOiJFSVM6SldTIiwianRpIjoiX2llOVVtcHBLNnFqcWY3ek4tTEg0USIsImlhdCI6MTY0OTkxNzA1MSwiZXhwIjoxNjgxNDUzMDUxLCJzdWIiOiJFQ1E6RUlDOlRPS0VOOkpXVCIsImNsYWltcyI6eyJ0ZW5hbnRJZCI6IlRlc3QtU2VydmljZTMiLCJpZHAiOiJPSURDIiwiZ2F0ZXdheSI6InNwIiwicHJvZmlsZSI6IlRFU1QzIn19.cijUS9RmkJHnWHjwG6rlDF1pC5TDFj6rOLy6ggCYDKqFkByCWnH0RNt87m4vb_0M3iQ32BaFhTcOK20ZrxaeNOb2LAQivh1k_GRQFX7dS6p_PoSlEWQ-GjYXTRWK70grnTklNoxSPUbl5mkVZB5si3QgMcTw-wCb3oql1_aYa4_9b8969jTqBkVLuaf5gxWTn5aTKRd1nkkjMX-ioXAOIBgOs29QPDLN8VGFOsT1-bicsvYYAsAc--tPKgxOQ50gDLB60-ICe46BGd9s5dRIxzzzicava43PlXLLSFvP39f5GXvMqPOKhabhHB2KHJGuNvU4mKbLdxzigsuyVpHokQ",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"code\": \"YWYyMjNkNTNlY2JjNDI1NzgxNzQwNjEyZTJmMGM4NmM6YXNkYXM6Mzg4MGQ1OWItZjVkZS00ODAzLWI2NjctQTAwMDAwMTpmNjgzNzg0MC1lNWIyLTRhNjItYTAxYi1BMDAwMDAxOjE2NDk5MTgzMjgwMDA=\",\r\n  \"nonce\": \"f6837840-e5b2-4a62-a01b-A000001\",\r\n  \"clientId\": \"Test-Service3\",\r\n  \"redirectUri\": \"https://httpbin.org/anything\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://oidc-rp.toppanecquaria.com/identity/oidc/sp/TEST3/token",
+					"protocol": "https",
+					"host": [
+						"oidc-rp",
+						"toppanecquaria",
+						"com"
+					],
+					"path": [
+						"identity",
+						"oidc",
+						"sp",
+						"TEST3",
+						"token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "SP: Proxy-redirect-flow (Login)",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://qeservices.mas.gov.sg/identity/auth?client_id=MAS-DEMO-SP-Test-proxy-nosso&app_id=MAS-SP-APP-1&profile=MAS-DEMO-OIDC-RP-MOCK&gateway=singpass&redirect_uri=https://demo.mas.gov.sg/singpass/nonsso/handler&ecquaria_correlationId=4a2051d8-eedf-484e-b068-A000001&eic_state=a6edc906-2f9f-5fb2-a373-A000001",
+					"protocol": "https",
+					"host": [
+						"qeservices",
+						"mas",
+						"gov",
+						"sg"
+					],
+					"path": [
+						"identity",
+						"auth"
+					],
+					"query": [
+						{
+							"key": "client_id",
+							"value": "MAS-DEMO-SP-Test-proxy-nosso"
+						},
+						{
+							"key": "app_id",
+							"value": "MAS-SP-APP-1"
+						},
+						{
+							"key": "profile",
+							"value": "MAS-DEMO-OIDC-RP-MOCK"
+						},
+						{
+							"key": "gateway",
+							"value": "singpass"
+						},
+						{
+							"key": "redirect_uri",
+							"value": "https://demo.mas.gov.sg/singpass/nonsso/handler"
+						},
+						{
+							"key": "ecquaria_correlationId",
+							"value": "4a2051d8-eedf-484e-b068-A000001"
+						},
+						{
+							"key": "eic_state",
+							"value": "a6edc906-2f9f-5fb2-a373-A000001"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "SP: Proxy-flow (Claim)",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "ecquaria-correlationId",
+						"value": "{{$guid}}",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "ecquaria-authToken",
+						"value": "eyJhbGciOiJSUzI1NiIsImtpZCI6IjJBaldpOXJISTcvUDlMQUJFdU01SjYzRURBMXBEMEdESE0yNXd2OHRRTTBVTzZrcDE2Y2pVdkQwb21XTDhQOXQiLCJlbnRpdHlJZCI6IlpHRDVHallNQzFkSWZqQkNLY2ZkYXcifQ.eyJpc3MiOiJFSVM6SldTIiwianRpIjoiWkdENUdqWU1DMWRJZmpCQ0tjZmRhdyIsImlhdCI6MTY0Mzg3NDk1MywiZXhwIjoxNjY5Nzk0OTUzLCJzdWIiOiJFQ1E6RUlDOlRPS0VOOkpXVCIsImNsYWltcyI6eyJ0ZW5hbnRJZCI6Ik1BUy1ERU1PLVNQLVRlc3QtcHJveHktbm9zc28iLCJpZHAiOiJPSURDIiwiZ2F0ZXdheSI6InNwIiwicHJvZmlsZSI6Ik1BUy1ERU1PLU9JREMtUlAtTU9DSyJ9fQ.HuqaG04aTcjzqpf-IHNY2yLgcXXeVrLaVQGcpWVuGeCaFZEBKGtHpfBKK_tcYjiQ0yJOC50NOUm4kmIzzkXLCiBsK5lb8hwzNiJblb-NC4NQWlHqpleYwXjAtFrWlwL-rqWZZkZK6VDhpECeSuaHR4xEXXQIVopetKICN1SkuMxYOaZKmpj2Mx6ZWmz4LQNW5JMAbZssHrdMd-XDjh5dRMe8XWe8FamJRYbs2APxc9OBQJ9B2WHK8ZEnFFqHQTepxFIdiGzoc6GXMb6JGUSKxcv3p_3nYxaxaXr36HlueCT6ZeJlzCkN6WrtcdNiQY9bX0W2t60D-bFVn4lP4e7GQA",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://oidc-rp.toppanecquaria.com/identity/oidc/proxy/sp/userInfo/c3AjTUFTLURFTU8tU1AtVGVzdC1wcm94eS1ub3NzbyNNQVMtREVNTy1PSURDLVJQLU1PQ0sjNjI1N2M5NzA0OThlNmI3MDdiNjk5YzUy",
+					"protocol": "https",
+					"host": [
+						"oidc-rp",
+						"toppanecquaria",
+						"com"
+					],
+					"path": [
+						"identity",
+						"oidc",
+						"proxy",
+						"sp",
+						"userInfo",
+						"c3AjTUFTLURFTU8tU1AtVGVzdC1wcm94eS1ub3NzbyNNQVMtREVNTy1PSURDLVJQLU1PQ0sjNjI1N2M5NzA0OThlNmI3MDdiNjk5YzUy"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
